@@ -1,0 +1,64 @@
+       /*```````````````````````````````````````````Layui_Aside````````````````````````````````````````*/
+
+       .layui-side-scroll,
+       .layui-nav-tree,
+       .layui-layout-admin .layui-side {
+           width: 285px !important;
+       }
+       .layui-nav-tree .layui-nav-item{
+            width:85% !important;
+        }
+        /*```````````````````````````````````````````Layui_Admin````````````````````````````````````````*/
+        .layui-layout-admin .layui-body {
+            left: 285px !important;
+        }
+       /*```````````````````````````````````````````mySelf`````````````````````````````````````````````*/
+       .input_wide_240 {
+           width: 240px !important;
+       }
+       .mgl_10{
+           margin-left: 10px !important;
+       }
+       .pd_10{
+           padding: 40px 15px 0 15px;
+       }
+       .myButton_big {
+           padding: 0 40px 0 40px !important;
+           border-radius: 5px;
+       }
+       .myButton_small {
+           padding: 0 20px 0 20px !important;
+           border-radius: 3px;
+       }
+       .btn-default {
+           background: #88a0ce !important;
+       }
+       .btn-default:hover{
+           background:#fff; 
+           color: #fff !important;
+       }       
+       .glyphicon{
+           color: rgba(255,255,255,.7) !important;
+       }
+       .glyphicon:hover{
+           color: #fff !important;
+       }
+       .inputWrap{
+           position: relative;
+           width:100%;
+           height: 35px;
+       }
+       .inputWrapButton{
+           position: absolute ;
+           right: 0;
+           z-index: 2;
+           height: 100%;
+       }
+       .inputWrapInput{
+           position: absolute ;
+           left: 0;
+           z-index: 1;
+           height: 100%;
+           padding-right: 50px;
+       }
+       

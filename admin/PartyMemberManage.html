@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>党员管理</title>
+  <link rel="stylesheet" href="../public/layui/css/layui.css">
+  <link rel="stylesheet" href="../public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/PartyMemberManage.css">
+  <link rel="stylesheet" href="../public/css/global.css">
+</head>
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">云上党建
+      </div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item">
+          <a href="">首页</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="./PartyMemberManage.html">党员管理</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="./PartyFeeManage/BindingAlipay.html">党费管理</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">党员工作</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">学习中心</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">报表管理</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">系统管理</a>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="">
+            <i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>
+          </a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">
+            <i class="layui-icon layui-icon-headset" style="font-size: 22px;"></i>
+          </a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 尤祖兴
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="layui-side ">
+      <div class="layui-side-scroll pd_10">
+        <div class="layui-input-inline inputWrap">
+          <input type="text" name="" placeholder="组织名称" autocomplete="off" class="input_wide_265 layui-input inputWrapInput">
+          <button type="button" class="btn btn-default inputWrapButton bg_red" aria-label="Left Align">
+            <span class="glyphicon glyphicon-search " aria-hidden="true"></span>
+          </button>
+        </div>
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+          <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">福州大学石油化工学院</a>
+            <dl class="layui-nav-child">
+              <dd>
+                <a href="javascript:;">测试党支部1</a>
+              </dd>
+              <dd>
+                <a href="javascript:;">测试党支部2</a>
+              </dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">福州大学测试学院</a>
+            <dl class="layui-nav-child">
+              <dd>
+                <a href="">测试党支部1</a>
+              </dd>
+              <dd>
+                <a href="">测试党支部2</a>
+              </dd>
+              <dd>
+                <a href="">测试党支部3</a>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="layui-body">
+      <!-- 内容主体区域 -->
+      <div style="padding: 15px;">党员管理</div>
+      <div class="layuiBodyWrap">
+        <div class="layui-form-item">
+          <div class="layui-input-inline">
+            <input type="text" name="" placeholder="姓名或工号" autocomplete="off" class="layui-input ">
+          </div>
+          <div class="layui-input-inline mgl_10">
+            <input type="text" name="" placeholder="组织角色" autocomplete="off" class="layui-input ">
+          </div>
+          <div class="layui-input-inline mgl_10">
+            <input type="text" name="" placeholder="授权状态" autocomplete="off" class="layui-input ">
+          </div>
+          <button class="layui-btn myButton_big bg_rad">搜索</button>
+          <button class="layui-btn myButton_big layui-btn-primary">重置</button>
+        </div>
+        <div class="layui-form-item">
+          <button type="button" class="btn btn-default" aria-label="Left Align">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </button>
+          <button class="layui-btn myButton_small layui-btn-normal layui-btn-sm mgl_10">添加党员</button>
+          <button class="layui-btn myButton_small layui-btn-normal layui-btn-sm">批量邀请</button>
+          <button class="layui-btn myButton_small layui-btn-normal layui-btn-sm">导入党员</button>
+        </div>
+        <table class="layui-hide" id="test"></table>
+      </div>
+    </div>
+  </div>
+  <script src="../public/jquery-3.2.1.min.js"></script>
+  <script src="../public/layui/layui.js"></script>
+  <script src="../public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script type="text/html" id="toolBar">
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">修改</a>
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">邀请</a>
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">删除</a>
+</script>
+<script>
+  layui.use('element', function () {
+      var element = layui.element;
+  });
+  layui.use('table', function () {
+      var table = layui.table;
+      table.render({
+          elem: '#test'
+          , data: [{ "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }, { "id": 1000, "branch": "测试党支部", "number": "T15078", "name": "尤祖兴", "Sstate": "已授权", "phone": 13110523536, "type": "学生党员", "roll": "普通党员", "yState": "预备党员" }]
+          , cols: [[
+          { type: 'checkbox', width: '5%' }
+          , { field: 'branch', width: '10%', title: '所在党支部' }
+          , { field: 'number', width: '10%', title: '工号', sort: true }
+          , { field: 'name', width: '9%', title: '姓名' }
+          , { field: 'Sstate', width: '9%', title: '授权状态' }
+          , { field: 'phone', width: '15%', title: '手机号', sort: true }
+          , { field: 'type', width: '9%', title: '党员类型', }
+          , { field: 'roll', width: '9%', title: '组织角色' }
+          , { field: 'yState', width: '9%', title: '党员状态', }
+          , { title: '操作', toolbar: '#toolBar', width: '15%', align: 'center', fixed: 'right' }
+          ]]
+          , skin: 'line'
+          , page: true
+      });
+  });
+</script>
+</body>
+</html>

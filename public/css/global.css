@@ -1,0 +1,110 @@
+  /*```````````````````````````````````````````Layui_Global````````````````````````````````````````*/
+
+  .layui-layout-admin .layui-logo {
+    color: #fff !important;
+    font-size: 1.3em !important;
+}
+
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after {
+    background-color: #f14b57 !important;
+}
+
+.layui-input {
+    border-radius: 5px;
+}
+.layui-btn{
+    border-radius: 5px;
+}
+.layui-btn-primary:hover {
+    border-color: #f14b57 !important;
+}
+
+.layui-laypage .layui-laypage-curr .layui-laypage-em {
+    background-color: #1E9FFF !important;
+}
+.layui-nav{
+    background: none !important;
+}
+.layui-side .layui-nav .layui-nav-item a{
+    color: #444 !important;
+}
+.layui-nav-tree .layui-nav-item a:hover{
+    background: none;
+}
+.layui-nav-tree{
+    margin-top:20px;
+}
+.layui-nav .layui-nav-mored, .layui-nav-itemed>a .layui-nav-more {
+    border-color: #444 transparent transparent !important;
+}
+.layui-nav .layui-nav-more{
+    border-color:  transparent transparent  #444!important;
+}
+.layui-nav-itemed>.layui-nav-child{
+    background: none !important;
+}
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+    background: none !important; 
+    text-decoration: none !important;
+}
+.layui-nav-tree .layui-nav-item a{
+    text-decoration: none !important;
+}
+.layui-nav-itemed>.layui-nav-child a{
+    padding-left: 35px;
+}
+.layui-icon:hover,{
+    color: #1E9FFF !important;
+}
+.layui-laypage input:focus{
+    border-color: #1E9FFF !important;
+}
+.layui-side .layui-nav .layui-nav-item a:hover,.layui-this{
+    background: #f2f2f2 !important;
+}
+.layui-laydate-header i:hover, .layui-laydate-header span:hover,.layui-laydate-footer span:hover{
+    color: #1E9FFF !important;
+}
+.layui-laydate .layui-this{
+    background-color: #1E9FFF !important;
+}
+.layui-laydate-content td.laydate-selected{
+    background-color: #6ebef9 !important;
+    color:#fff;
+}
+/*```````````````````````````````````````````mySelf_Global```````````````````````````````````````*/
+
+.bg_rad {
+    background: #f14b57 !important;
+}
+
+.layuiBodyWrap {
+    padding: 30px;
+    background: #fff;
+    margin: 0 15px 0 15px;
+}
+
+.a:focus, a:hover{
+    text-decoration: none !important;
+}
+
+ /*```````````````````````````````````````````Layui_Admin````````````````````````````````````````*/
+
+ .layui-layout-admin .layui-body {
+    
+    bottom: 0 !important;
+    padding: 5px;
+    background: #f7f7f7 !important;
+}
+
+ /*```````````````````````````````````````````mySelf`````````````````````````````````````````````*/
+.myButton_big {
+    padding: 0 40px 0 40px !important;
+}
+.mgAuto{
+    margin:10px auto;
+}
+
+
