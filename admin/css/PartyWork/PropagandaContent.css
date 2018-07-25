@@ -1,0 +1,21 @@
+.mgl{
+    margin-left: 10px !important;
+}
+.btn-default {
+    background: #88a0ce !important;
+}
+.btn-default:hover{
+    background:#fff; 
+    color: #fff !important;
+}   
+.glyphicon{
+    color: rgba(255,255,255,.7) !important;
+}
+.glyphicon:hover{
+    color: #fff !important;
+}    
+
+.myPushButton{
+    background-color:#ccc !important;
+    color:#777 !important;
+}

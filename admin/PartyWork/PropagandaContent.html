@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>党费导入</title>
+    <title>宣传内容</title>
     <link rel="stylesheet" href="../../public/layui/css/layui.css">
     <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/css/global.css">
-    <link rel="stylesheet" href="../css/PartyFeeManage/PartyFeeIntroduce.css">
+    <link rel="stylesheet" href="../css/PartyWork/PropagandaContent.css">
 </head>
 
 <body class="layui-layout-body">
@@ -23,11 +23,11 @@
                 <li class="layui-nav-item">
                     <a href="../PartyMemberManage.html">党员管理</a>
                 </li>
-                <li class="layui-nav-item layui-this">
-                    <a href="./BindingAlipay.html">党费管理</a>
-                </li>
                 <li class="layui-nav-item">
-                    <a href="../PartyWork/PropagandaContent.html">党员工作</a>
+                    <a href="../PartyFeeManage/BindingAlipay.html">党费管理</a>
+                </li>
+                <li class="layui-nav-item layui-this">
+                    <a href="./PropagandaContent.html">党员工作</a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="">学习中心</a>
@@ -63,62 +63,92 @@
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a class="" href="./BindingAlipay.html">绑定支付宝</a>
+                        <a class="" href="javascript:;">党建宣传</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="./PropagandaContent.html">宣传内容</a>
+                            </dd>
+                            <dd>
+                                <a href="./Taxonomy.html">分类设置</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item ">
+                        <a class="" href="javascript:;">两学一做</a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a href="javascript:;">测试一</a>
+                            </dd>
+                            <dd>
+                                <a href="javascript:;">测试二</a>
+                            </dd>
+                        </dl>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="javascript:;">缴纳比例设置</a>
+                        <a href="javascript:;">三会一课</a>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="./PartyFeeIntroduce.html">党费导入</a>
+                        <a href="">通知内容</a>
                     </li>
-                    <li class="layui-nav-item">
-                        <a href="">党费缴纳管理</a>
-                    </li>
-                    <li class="layui-nav-item">
-                        <a href="">党费报表</a>
-                    </li>
+
                 </ul>
             </div>
         </div>
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <div style="padding: 15px;">党员管理 &gt; 党费导入 </div>
+            <div style="padding: 15px;">党务工作 &gt; 党员宣传 &gt; 宣传内容 </div>
             <div class="layuiBodyWrap ">
                 <form class="layui-form adminForm" action="">
                     <div class="layui-form-item">
-                        <div class="layui-inline">
-                            <label class="layui-form-label">制单日期:</label>
-                            <div class="layui-input-inline">
-                                <input type="text" name="date" id="date" lay-verify="date" placeholder="开始日期 ~ 结束日期" autocomplete="off" class="layui-input">
-                            </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="" placeholder="姓名或工号" autocomplete="off" class="layui-input ">
                         </div>
 
                         <div class="layui-inline">
-                            <label class="layui-form-label">发送状态:</label>
                             <div class="layui-input-inline">
                                 <select name="sendState">
-                                    <option value="" selected>全部</option>
+                                    <option value="" selected>请选择分类</option>
                                     <option value="测试一">测试一</option>
                                     <option value="测试二">测试二</option>
 
                                 </select>
                             </div>
                         </div>
-                        <button class="layui-btn myButton_big bg_rad mgb">搜索</button>
-                        <button class="layui-btn myButton_big layui-btn-primary mgb">重置</button>
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <select name="sendState">
+                                    <option value="" selected>请选择发布状态</option>
+                                    <option value="测试一">测试一</option>
+                                    <option value="测试二">测试二</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <button class="layui-btn myButton_big bg_rad " style="margin-bottom:5px;">搜索</button>
+                        <button class="layui-btn myButton_big layui-btn-primary " style="margin-bottom:5px;">重置</button>
                     </div>
                     <div class="layui-form-item">
-                        <button class="layui-btn myButton_small layui-btn-normal layui-btn-sm  mgl">上传党费</button>
+                        <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        </button>
+                        <button class="layui-btn myButton_small layui-btn-normal layui-btn-sm  mgl">新增内容</button>
+                        <button class="layui-btn myButton_small layui-btn-sm  mgl myPushButton">批量发布</button>                        
                     </div>
+                    <table class="layui-hide" id="test"></table>
                 </form>
             </div>
         </div>
+    </div>
     </div>
     <script src="../../public/jquery-3.2.1.min.js"></script>
     <script src="../../public/layui/layui.js"></script>
     <script src="../../public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../../public/js/global.js"></script>
+    <script type="text/html" id="toolBar">
+        <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">预览</a>
+        <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">撤销</a>
+    </script>
     </script>
     <script>
         //计算主题区域最小高度
@@ -128,6 +158,7 @@
         $('.adminForm').css({
             'min-height': mumHeight
         })
+
         layui.use(['form', 'element', 'laydate'], function () {
             var element = layui.element
                 , form = layui.form
@@ -138,6 +169,25 @@
                 , range: true //或 range: '~' 来自定义分割字符
             });
         });
+  layui.use('table', function () {
+      var table = layui.table;
+      table.render({
+          elem: '#test'
+          , data: [{ "id": 1000, "title": "我院45名本科毕业班党员顺利完成组织关系介绍信开具工作", "type": "党建要闻", "state": "已发布", "people": "伍宇翔", "time": "2018-07-15 16:33:56"}]
+          , cols: [[
+          { type: 'checkbox', width: '5%' }
+          , { field: 'title', width: '30%', title: '标题' }
+          , { field: 'type', width: '10%', title: '类型'}
+          , { field: 'state', width: '10%', title: '发布状态' }
+          , { field: 'people', width: '10%', title: '创建人' }
+          , { field: 'time', width: '20%', title: '创建时间', sort: true }
+          , { title: '操作', toolbar: '#toolBar', width: '15%', align: 'center', fixed: 'right' }
+          ]]
+          , skin: 'line'
+          , page: true
+      });
+  });
+
     </script>
 </body>
 

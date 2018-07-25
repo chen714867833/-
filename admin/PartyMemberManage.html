@@ -18,17 +18,17 @@
       </div>
       <!-- 头部区域（可配合layui已有的水平导航） -->
       <ul class="layui-nav layui-layout-left">
-        <li class="layui-nav-item">
+        <li class="layui-nav-item ">
           <a href="">首页</a>
         </li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item layui-this">
           <a href="./PartyMemberManage.html">党员管理</a>
         </li>
         <li class="layui-nav-item">
           <a href="./PartyFeeManage/BindingAlipay.html">党费管理</a>
         </li>
         <li class="layui-nav-item">
-          <a href="">党员工作</a>
+          <a href="./PartyWork/PropagandaContent.html">党员工作</a>
         </li>
         <li class="layui-nav-item">
           <a href="">学习中心</a>
@@ -135,10 +135,8 @@
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">邀请</a>
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">删除</a>
 </script>
+<script src="../public/js/global.js"></script>
 <script>
-  layui.use('element', function () {
-      var element = layui.element;
-  });
   layui.use('table', function () {
       var table = layui.table;
       table.render({

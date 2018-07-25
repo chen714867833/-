@@ -5,6 +5,15 @@
     font-size: 1.3em !important;
 }
 
+
+.layui-nav.layui-layout-left>li.layui-nav-item.layui-this{
+    background-color: #000 !important;
+ }
+ .layui-nav.layui-layout-left>li.layui-nav-item.layui-this>a{
+    color: #fff !important;
+    text-decoration: none;
+ }
+
 .layui-nav .layui-this:after,
 .layui-nav-bar,
 .layui-nav-tree .layui-nav-itemed:after {
@@ -74,6 +83,9 @@
     background-color: #6ebef9 !important;
     color:#fff;
 }
+
+
+
 /*```````````````````````````````````````````mySelf_Global```````````````````````````````````````*/
 
 .bg_rad {
