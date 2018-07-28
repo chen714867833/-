@@ -1,0 +1,22 @@
+#statementManageNav .layui-nav-item.layui-this{
+      background-color: #f2f2f2 !important;
+    }
+#memberManage>div.layui-row>div.layui-col-md4:first-child>div{
+	border-left: none !important;
+}
+#memberManage>div.layui-row:first-child{
+	border-bottom:3px solid #f4f4f4;
+}
+#memberManage>div.layui-row>div.layui-col-md4>div{
+	border-left: 3px solid #f4f4f4;
+}
+#memberManage>div.layui-row:first-child>div.layui-col-md4{
+	padding-bottom: 1.2em;
+}
+#memberManage>div.layui-row:nth-child(2)>div.layui-col-md4{
+	padding-top: 1.2em;
+}
+#memberManage>div.layui-row:last-child{
+	border-top: 10px solid #f4f4f4;
+	padding: 1.2em;
+}
