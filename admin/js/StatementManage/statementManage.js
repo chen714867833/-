@@ -48,14 +48,6 @@ var colors=['#dd6b66','#759aa0','#8dc1a9','#e69d87','#919e8b','#aaaaaa'];
   var countHeadsChart=echarts.init(document.getElementById("countHeadsOfMonth"));
   var origanizeChart=echarts.init(document.getElementById("organizeProportion"));
   var idenChart=echarts.init(document.getElementById("idenProportion"));
-  sexChart.showLoading();
-  ageChart.showLoading();
-  academicChart.showLoading();
-  timeChart.showLoading();
-  nationChart.showLoading();
-  countHeadsChart.showLoading();
-  origanizeChart.showLoading();
-  idenChart.showLoading();
 
 function randomColors(colors){
   for(var i=6;i>0;i--){
@@ -328,9 +320,18 @@ function setOriganizeManage(){
 }
 
 $("#memberManageClick").click(function(event){
+  sexChart.showLoading();
+  ageChart.showLoading();
+  academicChart.showLoading();
+  timeChart.showLoading();
+  nationChart.showLoading();
+  countHeadsChart.showLoading();
+  
   setMemberManage();
 });
 $("#origanizeManageClick").click(function(event){
+  origanizeChart.showLoading();
+  idenChart.showLoading();
   setOriganizeManage();
 });
 
