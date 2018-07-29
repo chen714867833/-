@@ -1,0 +1,25 @@
+{
+	"code":0,
+	 "msg":"",
+	 "count":2,
+	 "data":[
+		{
+		"name":"xxx",
+		"partition":"xxx",
+		"studyTime":100,
+		"pointDoing":1,
+		"pointDone":2,
+		"publicDoing":1,
+		"publicDone":0,
+		},
+		{
+		"name":"yyy",
+		"partition":"xxx",
+		"studyTime":100,
+		"pointDoing":0,
+		"pointDone":2,
+		"publicDoing":1,
+		"publicDone":0,
+		}
+	],
+}

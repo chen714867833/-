@@ -1,0 +1,43 @@
+
+/*
+#studyManageTip>span+span{
+	margin-left: 4px;
+}
+*/
+#studyDetails{
+	font-size: 1.2em;
+	letter-spacing: 0.1em;
+}
+#studyDetails>div.layui-btn-gropu>a>span{
+	transform:rotateY(180deg);
+ 	 -webkit-transform:rotateY(180deg); /* Safari and Chrome */"
+ 	 margin-right: 0.5em;
+}
+
+#studyDetails div.layui-container>div.layui-row>div.layui-col-md1{
+	text-align: right;
+	width: 12%;
+	color: #777;
+}
+
+#studyDetails div.layui-container>div.layui-row>div.layui-col-md11{
+	width: 85%;
+}
+
+#studyDetails div.layui-container>div.layui-row{
+	margin-bottom: 1em;
+}
+#studyDetails div.layui-container>div.layui-row:first-child{
+	margin-top: 1em;
+}
+
+span.studyContentIcon{
+	color: #FFB800;
+}
+#studyDetails div.layui-container>div.layui-row>div.layui-col-md11:last-child>div.layui-row>div.layui-col-md6{
+	background-color: #f2f2f2;
+	width: 47%;
+	text-overflow:ellipsis;
+	margin-right: 0.5em;
+	margin-bottom: 0.5em;	
+}

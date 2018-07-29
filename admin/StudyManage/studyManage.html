@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>学习中心</title>
+  <link rel="stylesheet" href="../css/StudyManage/studyManage.css">
   <link rel="stylesheet" href="../../public/layui/css/layui.css">
   <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../public/css/global.css">
@@ -66,13 +67,13 @@
             <a href="javascript:;">学习中心</a>
             <dl class="layui-nav-child">
               <dd>
-                <a href="javascript:;">学习分类</a>
+                <a href="javascript:;" id="studyTypeNav">学习分类</a>
               </dd>
               <dd>
-                <a href="javascript:;">学习内容</a>
+                <a href="#studyContent" data-toggle="tab" id="studyContentNav">学习内容</a>
               </dd>
               <dd>
-                <a href="javascript:;">学习情况分析</a>
+                <a href="#studyCircumstances" data-toggle="tab" id="studyCircumstancesNav">学习情况分析</a>
               </dd>
             </dl>
           </li>
@@ -92,12 +93,13 @@
 
     <div class="layui-body">
             <!-- 内容主体区域 -->
-            <div style="padding: 15px;">学习中心 &gt; 学习内容 </div>
-            <div class="layuiBodyWrap ">
+        <div id="studyManageTip" style="padding: 15px;"><span>学习中心</span><span> > 学习内容</span></div>
+        <div class="tab-content">
+            <div class="layuiBodyWrap tab-pane fade in active" id="studyContent">
                 <form class="layui-form adminForm" action="">
                     <div class="layui-form-item">
                         <div class="layui-input-inline">
-                            <input type="text" name="" placeholder="请输入标题" autocomplete="off" class="layui-input ">
+                            <input type="text" name="" placeholder="请输入标题" autocomplete="off" class="layui-input " />
                         </div>
 
                         <div class="layui-inline">
@@ -124,27 +126,164 @@
                         <button class="layui-btn myButton_big layui-btn-primary " style="margin-bottom:5px;">重置</button>
                     </div>
                     <div class="layui-form-item">
-                        <button class="layui-btn myButton_small layui-btn-normal layui-btn-sm">新建</button>                       
+                        <button class="layui-btn myButton_big layui-bg-blue">新建</button>                       
                     </div>
                     <table class="layui-hide" id="test"></table>
                 </form>
             </div>
-        </div>
+            <div class="layuiBodyWrap tab-pane fade" id="studyDetails">
+              <div class="layui-btn-gropu"><!--按钮-->
+                <a class="layui-btn layui-btn-primary" id="studyContentBack" href="#studyContent" data-toggle="tab"><span class="glyphicon glyphicon-share-alt"></span>返回</a>
+              </div>
+              <!--内容-->
+              <div class="layui-container">
+                <!--第一行-->
+                <div class="layui-row">
+                  <div class="layui-col-md1">
+                    标题：
+                  </div>
+                  <div class="layui-col-md11">
+                    中国共产党党章
+                  </div>
+                </div>
+                <!--第二行-->
+                <div class="layui-row">
+                  <div class="layui-col-md1">
+                    内容分类：
+                  </div>
+                  <div class="layui-col-md11">
+                    党章
+                  </div>
+                </div>
+                <!--第三行-->
+                <div class="layui-row">
+                  <div class="layui-col-md1">
+                    最短学习时间：
+                  </div>
+                  <div class="layui-col-md11">
+                    1.00小时
+                  </div>
+                </div>
+                <!--第四行-->
+                <div class="layui-row">
+                  <div class="layui-col-md1">
+                    显示设置：
+                  </div>
+                  <div class="layui-col-md11">
+                    公开,所有人可见
+                  </div>
+                </div>
+                <!--第五行 -->
+                <div class="layui-row">
+                  <div class="layui-col-md1">
+                    课程内容：
+                  </div>
+                  <div class="layui-col-md11">
+                    <div class="layui-row">
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">总纲</span>
+                      </div>
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第一章 党员</span>
+                      </div>
+                    </div>
+                    <div class="layui-row">
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第二章 党的组织制度</span>
+                      </div>
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第三章 党的中央组织</span>
+                      </div>
+                    </div>
+                    <div class="layui-row">
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第四章 </span>
+                      </div>
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第五章</span>
+                      </div>
+                    </div>
+                    <div class="layui-row">
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第六章</span>
+                      </div>
+                      <div class="layui-col-md6">
+                        <span class="glyphicon glyphicon-file studyContentIcon"></span>
+                        <span class="studyContentChapters">第七章</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="layuiBodyWrap tab-pane fade" id="studyCircumstances">
+              <form class="layui-form adminForm" action="">
+                    <div class="layui-form-item">
+                        <div class="layui-input-inline">
+                            <input type="text" name="" placeholder="请输入姓名" autocomplete="off" class="layui-input " />
+                        </div>
+
+                        <div class="layui-inline">
+                            <div class="layui-input-inline">
+                                <select name="sendState">
+                                    <option value="" selected>请选择部门</option>
+                                    <option value="测试一">部门一</option>
+                                    <option value="测试二">部门二</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button class="layui-btn myButton_big bg_rad " style="margin-bottom:5px;">搜索</button>
+                        <button class="layui-btn myButton_big layui-btn-primary " style="margin-bottom:5px;">重置</button>
+                    </div>
+              </form>
+              <table class="layui-table" lay-data="{url:'studyCircumstances.json', page:true, id:'studyCircumstancesTable', skin: 'line'}">
+                <thead>
+                  <tr>
+                    <th lay-data="{field:'name', width:140}" rowspan="2">姓名</th>
+                    <th lay-data="{field:'partition',width:120}" rowspan="2">支部</th>
+                    <th lay-data="{field:'studyTime', width:120}" rowspan="2">总学时(h)</th>
+                    <th lay-data="{field:'pointSubject', width:200}" colspan="2">指定必修课</th>
+                    <th lay-data="{field:'publicSubject', width:200}" colspan="2">公开课程</th>
+                    <th lay-data="{fixed: 'option', width: 160, align: 'center', toolbar: '#barDemo'}" rowspan="2">操作</th>
+                  </tr>
+                  <tr>
+                    <th lay-data="{field:'pointDoing', width:100}">未完成</th>
+                    <th lay-data="{field:'pointDone', width:100}">已完成</th>
+                    <th lay-data="{field:'publicDoing', width:100}">未完成</th>
+                    <th lay-data="{field:'publicDone', width:100}">已完成</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+       </div>
   </div>
   <script src="../../public/jquery-3.2.1.min.js"></script>
   <script src="../../public/layui/layui.js"></script>
   <script src="../../public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/StudyManage/studyManage.js"></script>
   <script type="text/html" id="toolBar">
-    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">详情</a>
+    <a class="layui-btn layui-btn-xs layui-btn-normal studyContentDetail" lay-event="review" data-toggle="tab" href="#studyDetails">详情</a>
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">撤销</a>
   </script>
 <script src="../../public/js/global.js"></script>
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-primary layui-btn-xs studyCircumstancesLook" lay-event="detail" >查看明细</a>
+</script>
 <script>
   layui.use('table', function () {
       var table = layui.table;
       table.render({
           elem: '#test'
-          , data: [{ "id": 1000, "title": "我院45名本科毕业班党员顺利完成组织关系介绍信开具工作", "type": "党建要闻", "state": "已发布", "people": "伍宇翔"}]
+          , data: [{ "id": 1000, "title": "我院45名本科毕业班党员顺利完成组织关系介绍信开具工作", "type": "党建要闻", "state": "已发布", "people": "伍宇翔"},{ "id": 1000, "title": "我院45名本科毕业班党员顺利完成组织关系介绍信开具工作", "type": "党建要闻", "state": "已发布", "people": "伍宇翔"}]
           , cols: [[
           { type: 'checkbox', width: '5%' }
           , { field: 'title', width: '40%', title: '标题' }
