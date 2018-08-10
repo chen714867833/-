@@ -1,0 +1,61 @@
+#systemManageNav .layui-nav-item.layui-this{
+      background-color: #f2f2f2 !important;
+}
+
+#idenManageContent div.input-group,
+#origManageContent div.input-group{
+	width:30%;
+	margin-top: 1em;
+}
+
+#idenManageContent div.input-group input.form-control,
+#origManageContent div.input-group input.form-control{
+	border-bottom-left-radius: 1.2em;
+	border-top-left-radius: 1.2em;
+}
+
+#idenManageContent div.input-group .input-group-addon,
+#origManageContent div.input-group .input-group-addon{
+	border-bottom-right-radius: 1em;
+	border-top-right-radius: 1em;
+	cursor: pointer;
+	color: #fff;
+	background-color: #1E9FFF;
+}
+
+#idenManageContent .badge,
+#origManageContent .badge{
+	font-weight: 500px;
+	font-size: 12px;
+	padding: 5px 12px;
+	color: #1E9FFF;
+	background-color:#fff;
+	border:1px solid #1E9FFF;
+	border-radius: 12px;
+	margin-right: 5px;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+#scoreManageContent div.panel-body>div.row+div.row{
+	margin-top: 15px;
+}
+
+#scoreManageContent .form-control[disabled]{
+	background-color: #f5f5f5;
+}
+
+#scoreManageContent div.panel-body div.row .input-group-addon{
+	background-color: #fff;
+}
+
+#scoreManageContent div.panel-footer{
+	background-color: #fff;
+}
+
+#scoreSave{
+	color: #fff;
+	background-color: #f14b57;
+	padding: 5px 30px ;
+	font-size: 14px;
+}

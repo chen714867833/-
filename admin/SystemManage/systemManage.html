@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>系统管理</title>
+  <link rel="stylesheet" href="../css/SystemManage/systemManage.css">
+  <link rel="stylesheet" href="../../public/layui/css/layui.css">
+  <link rel="stylesheet" href="../../public/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../public/css/global.css">
+</head>
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">云上党建</div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item ">
+          <a href="">首页</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="../PartyMemberManage.html">党员管理</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="../PartyFeeManage/BindingAlipay.html">党费管理</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="../PartyWork/PropagandaContent.html">党员工作</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="../StudyManage/studyManage.html">学习中心</a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="../StatementManage/statementManage.html">报表管理</a>
+        </li>
+        <li class="layui-nav-item layui-this">
+          <a href="../SystemManage/systemManage.html">系统管理</a>
+        </li>
+      </ul>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="">
+            <i class="layui-icon layui-icon-read" style="font-size: 22px;"></i>
+          </a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="">
+            <i class="layui-icon layui-icon-headset" style="font-size: 22px;"></i>
+          </a>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img"> 尤祖兴
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="layui-side ">
+      <div class="layui-side-scroll pd_10">
+        <ul class="layui-nav layui-nav-tree" lay-filter="test" id="systemManageNav">
+          <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+          <li class="layui-nav-item layui-this active">
+            <a href="#authManageContent" id="authManage" data-toggle="tab">权限管理</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="#idenManageContent" id="idenManage" data-toggle="tab">身份管理</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="#scoreManageContent" id="scoreManage" data-toggle="tab">积分管理</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="#bannerManageContent" id="bannerManage" data-toggle="tab">banner管理</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="#origManageContent" id="origManage" data-toggle="tab">组织角色</a>
+          </li>
+          <li class="layui-nav-item">
+            <a href="#useAuthorizeContent" id="useAuthorize" data-toggle="tab">使用授权</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="layui-body">
+            <!-- 内容主体区域 -->
+        <div id="systemManageTip" style="padding: 15px;">
+          <span>系统管理</span><span> > 权限管理</span>
+        </div>
+        <div class="tab-content">
+            <!--权限管理-->
+            <div class="layuiBodyWrap tab-pane fade in active" id="authManageContent">
+                auth
+            </div>
+            <!--身份管理-->
+            <div class="layuiBodyWrap tab-pane fade" id="idenManageContent">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">
+                         身份设置
+                      </h3>
+                  </div>
+                  <div class="panel-body">
+                     <div id="badgeList">
+                        <span class="badge">学生</span>
+                        <span class="badge">教师</span>
+                     </div>
+
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入要添加的身份" id="idenInput" />
+                        <span class="input-group-addon" id="idenAdd">添加</span>
+                     </div>
+                  </div>
+                </div>
+            </div>
+            <!--积分管理-->
+            <div class="layuiBodyWrap tab-pane fade" id="scoreManageContent">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="panel-title">
+                           内容
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="panel-title">
+                           获得积分
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel-body">
+                    <!--第一行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">1</span>
+                            <input type="text" class="form-control" value="参加一次支部党员" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="firstInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                     <!--第二行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">2</span>
+                            <input type="text" class="form-control" value="参加一次支部委员会" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="secondInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                     <!--第三行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">3</span>
+                            <input type="text" class="form-control" value="参加一次党小组会" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="thirdInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                     <!--第四行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">4</span>
+                            <input type="text" class="form-control" value="参加一次党课" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="fourInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                     <!--第五行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">5</span>
+                            <input type="text" class="form-control" value="进行一次两学一做学习" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="fiveInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                     <!--第六行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">6</span>
+                            <input type="text" class="form-control" value="缴纳一次党费" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="sixInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                     <!--第七行-->
+                     <div class="row">
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <span class="input-group-addon">7</span>
+                            <input type="text" class="form-control" value="参加一次党群活动" disabled="true" />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="input-group">
+                            <input type="text" class="form-control" id="sevenInput" />
+                            <span class="input-group-addon">分</span>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="panel-footer">
+                    <button class="btn" id="scoreSave">保存</button>
+                  </div>
+                </div>
+            </div>
+
+            <div class="layuiBodyWrap tab-pane fade" id="bannerManageContent">
+                authsfd
+            </div>
+            <div class="layuiBodyWrap tab-pane fade" id="origManageContent">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">
+                         组织角色
+                      </h3>
+                  </div>
+                  <div class="panel-body">
+                     <div id="badgeList">
+                        <span class="badge">党委书记</span>
+                        <span class="badge">党员</span>
+                     </div>
+
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入要添加的组织角色" id="orgiInput" />
+                        <span class="input-group-addon" id="orgiAdd">添加</span>
+                     </div>
+                  </div>
+                </div>
+            </div>
+            <div class="layuiBodyWrap tab-pane fade" id="useAuthorizeContent">
+                authasdasd
+            </div>
+        </div>
+    </div>
+  </div>
+  <script src="../../public/jquery-3.2.1.min.js"></script>
+  <script src="../../public/layui/layui.js"></script>
+  <script src="../../public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="../../public/js/global.js"></script>
+  <script type="text/javascript" src="../js/SystemManage/systemManage.js"></script>
+
+</body>
+</html>
