@@ -67,15 +67,31 @@ $("#useAuthorize").click(function(e){
 $("#idenAdd").click(function(e){
 	e.preventDefault();
 	if($("#idenInput").val().length>0){
-		$("#badgeList").append('<span class="badge">'+$("#idenInput").val()+'</span>');
+		$("#idenBadgeList").append('<span class="badge">'+$("#idenInput").val()+'</span>');
 		$("#idenInput").val("");
 	}
 });
 /*
 *删除身份
 */
-$("#badgeList").on("click","span.badge",function(e){
+$("#idenBadgeList").on("click","span.badge",function(e){
 	this.remove();
+});
+/*组织管理
+*添加组织
+*/
+$("#origAdd").click(function(e){
+    e.preventDefault();
+    if($("#origInput").val().length>0){
+        $("#origBadgeList").append('<span class="badge">'+$("#origInput").val()+'</span>');
+        $("#origInput").val("");
+    }
+});
+/*
+*删除身份
+*/
+$("#origBadgeList").on("click","span.badge",function(e){
+    this.remove();
 });
 /*
 *党员管理 全选
@@ -354,5 +370,77 @@ $("div.col-md-6.auth-all").on("click","input[name='authorityAll']+div.layui-form
 				$(this).click();
 			}
 		});
+	}
+});
+
+/*
+*更改图片
+*/
+$("#bannerChange").click(function(e){
+	if($("#bannerChange").text() === "更改照片")
+	{
+		$("#bannerCancel").addClass("unDisabled");
+		$("#bannerLink").prop("disabled",false);
+		$("#bannerChange").text("确认更改");
+	}else{
+        if($("#bannerLink").val().length == 0){
+            $("#bannerLink").tooltip("show");
+            setTimeout(function(){
+            	$("#bannerLink").tooltip("hide");
+			},2000);
+		}
+		else{
+            $("#bannerCarousel>div[carousel-item]>div.layui-this>img").prop("src",$("#bannerLink").val());
+            $("#bannerImg").prop("src",$("#bannerCarousel>div[carousel-item]>div.layui-this>img").prop("src"));
+            $("#bannerLink").prop("value","");
+            $("#bannerLink").prop("disabled",true);
+            $("#bannerCancel").removeClass("unDisabled");
+            $("#bannerChange").text("更改照片");
+        }
+
+	}
+});
+
+$("#bannerCancel").click(function(){
+	if($(this).hasClass("unDisabled")){
+        $("#bannerChange").text("更改照片");
+        $("#bannerLink").prop("value","");
+        $("#bannerLink").prop("disabled",true);
+        $("#bannerCancel").removeClass("unDisabled");
+	}
+});
+/*
+$("#bannerSave").click(function(e){
+
+});
+*/
+$("#bannerDelete").click(function(e){
+	if(confirm("确定删除？")){
+		$("#bannerCarousel>div[carousel-item]>div.layui-this").remove();
+        $("#bannerCarousel>div.layui-carousel-ind>ul>li.layui-this").remove();
+        $("#bannerCarousel>div[carousel-item]>div:first-child").addClass("layui-this");
+        $("#bannerCarousel>div.layui-carousel-ind>ul>li:first-child").addClass("layui-this");
+        layui.use('carousel', function(){
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#bannerCarousel'
+                ,width: '100%' //设置容器宽度
+                ,arrow: 'always' //始终显示箭头
+                ,indicator: 'outside'
+                ,autoplay: false
+            });
+
+            //监听滚动
+            carousel.on('change(bannerCarousel)', function(obj){
+                //bannerCarousel来源于对应HTML容器的 lay-filter="bannerCarousel" 属性值
+            	//console.log(obj.index); //当前条目的索引
+                //console.log(obj.prevIndex); //上一个条目的索引
+                //console.log(obj.item); //当前条目的元素对象
+                setTimeout(function(){$("#bannerImg").prop("src",obj.item.children("img").prop("src"))},300);
+            });
+
+            $("#bannerImg").prop("src",$("#bannerCarousel>div[carousel-item]>div.layui-this>img").prop("src"));
+        });
 	}
 });

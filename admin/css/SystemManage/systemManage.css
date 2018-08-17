@@ -30,7 +30,7 @@
 #memberItems .badge,
 #idenManageContent .badge,
 #origManageContent .badge{
-	font-weight: 500px;
+	font-weight: 500;
 	font-size: 12px;
 	padding: 5px 12px;
 	color: #1E9FFF;
@@ -58,11 +58,12 @@
 	background-color: #fff;
 }
 
-#scoreSave{
+#scoreSave,#bannerSave{
 	color: #fff;
 	background-color: #f14b57;
-	padding: 5px 30px ;
+	padding: 8px 30px ;
 	font-size: 14px;
+	letter-spacing: 6px;
 }
 
 #authManageContent .label.label-auth{
@@ -162,5 +163,122 @@ div.row.auth-content .auth-all{
 	padding-right: 15px;
 }
 
+.col-md-4 .banner-header{
+	margin-bottom: 1.5em;
+}
+
+.col-md-8 .banner-header{
+	margin-bottom: 3.5em;
+}
+.banner-title{
+	border-left: 4px solid #f14b57;
+	padding-left: 4px;
+	font-size: 1.2em;
+}
+
+.banner-body>div+div{
+	margin-top: 3em;
+}
+
+.banner-body .tip{
+	color: #999;
+	font-size: 14px;
+}
+
+#bannerLink{
+	text-align: center;
+}
+
+#bannerCancel{
+	color:#ccc;
+}
+
+#bannerCancel.unDisabled{
+	background-color: #fff;
+	color: #f14b57;
+	cursor: pointer;
+}
+
+#bannerChange{
+	color: #fff;
+	background-color: #1E9FFF;
+	padding: 8px 30px ;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+#bannerDelete{
+	color: #fff;
+	background-color: #f14b57;
+	padding: 8px 30px ;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+.banner-body .input-group{
+	margin-top: 0.8em;
+	margin-bottom: 2em;
+}
+.banner-operation .btnOperation>.btn{
+	border-radius: 5px;
+}
+
+.banner-operation .btnOperation>.btn+.btn{
+	margin-left: 0.8em !important;
+}
+
+.banner-operation>div+div{
+	margin-top: 0.8em;
+}
+
+.banner-operation{
+	margin-top: 5em;
+	text-align: center;
+}
 
 
+.imgDot{
+	color: #f14b57;
+	margin-right: 0.2em;
+}
+
+.imgTip{
+	color: #fff;
+	background-color: #1E9FFF;
+	margin-left: 0.2em;
+}
+
+.layui-carousel-arrow{
+	background-color: #1E9FFF !important;
+}
+
+.layui-carousel{
+	background-color: transparent !important;
+}
+
+.layui-carousel>[carousel-item]:before{
+	content: '' !important;
+}
+.layui-carousel>[carousel-item]>div{
+	background-color: transparent !important;
+	text-align: center;
+}
+
+.layui-carousel-ind ul{
+	background-color: rgba(0,0,0,0) !important;
+}
+
+.layui-carousel-ind ul li{
+	border: 1px solid #aaa !important;
+}
+
+.layui-carousel-ind ul li.layui-this{
+	background-color: #aaa !important;
+}
+
+img#bannerImg{
+	position: relative;
+	top: -470px;
+	width: 248px;
+	left: 22px;
+	height: 106px;
+	z-index: 100;
+}

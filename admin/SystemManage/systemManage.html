@@ -392,7 +392,7 @@
                       </h3>
                   </div>
                   <div class="panel-body">
-                     <div id="badgeList">
+                     <div id="idenBadgeList">
                         <span class="badge">学生</span>
                         <span class="badge">教师</span>
                      </div>
@@ -534,7 +534,87 @@
                 </div>
             </div>
             <div class="layuiBodyWrap tab-pane fade" id="bannerManageContent">
-                
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="banner-header">
+                            <span class="banner-title">banner图编辑</span>
+                        </div>
+                        <div class="banner-body">
+                            <!--轮播图-->
+                            <div>
+                                <div class="layui-carousel" lay-filter="bannerCarousel" id="bannerCarousel">
+                                    <div carousel-item>
+                                        <div>
+                                            <p>
+                                                <span class="imgDot">*</span>
+                                                <span class="imgNum">第 1 张</span>
+                                                <span class="label imgTip">系统默认</span>
+                                            </p>
+                                            <img src="https://desk-fd.zol-img.com.cn/t_s1440x900c5/g3/M00/0B/0F/Cg-4WFRAdTaIdCbhACwGrkpfjeAAAQNMwHa1AcALAbG718.jpg"
+                                                 height="80%" width="50%" alt="banner图" />
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <span class="imgDot">*</span>
+                                                <span class="imgNum">第 2 张</span>
+                                                <span class="label imgTip">系统默认</span>
+                                            </p>
+                                            <img src="https://desk-fd.zol-img.com.cn/t_s1600x900c5/g3/M09/02/0B/Cg-4WFQqEDeITA-fADHY-8KO95cAAPoNAGXZ6UAMdkT409.jpg"
+                                                 height="80%" width="50%" alt="banner图" />
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <span class="imgDot">*</span>
+                                                <span class="imgNum">第 3 张</span>
+                                                <span class="label imgTip">系统默认</span>
+                                            </p>
+                                            <img src="https://desk-fd.zol-img.com.cn/t_s1366x768c5/g5/M00/02/07/ChMkJ1bKyx6IfyroABOCj3O54GgAALImQMJqn0AE4Kn387.jpg"
+                                                 height="80%" width="50%" alt="banner图" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="banner-operation">
+                                    <div class="btnOperation">
+                                        <button class="btn" id="bannerChange">更改照片</button>
+                                        <button class="btn" id="bannerDelete">删除此照片</button>
+                                    </div>
+                                    <div><span class="tip">温馨提示：建议图片尺寸宽750-高320  支持图片类型：jpg、png</span></div>
+                                </div>
+                            </div>
+                            <!--添加链接-->
+                            <div>
+                                <div>添加图片链接<span class="tip">（不添加链接，则没有跳转）</span></div>
+                                <div class="input-group">
+                                    <input class="form-control"
+                                           id="bannerLink"
+                                           placeholder="粘贴或者输入 http://或https://开头的链接地址"
+                                           disabled="true"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           trigger="manual"
+                                           title="请输入图片地址"
+                                    />
+                                    <span class="input-group-addon" id="bannerCancel">取消</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="banner-footer">
+                            <button class="btn" id="bannerSave">保存</button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="banner-header">
+                            <span class="banner-title">手机效果预览</span>
+                        </div>
+                        <div class="banner-body">
+                            <img src="../image/phone.png" />
+                            <img src=""
+                                 id="bannerImg" width="248px" height="105px"  />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="layuiBodyWrap tab-pane fade" id="origManageContent">
                 <div class="panel panel-default">
@@ -544,20 +624,19 @@
                       </h3>
                   </div>
                   <div class="panel-body">
-                     <div id="badgeList">
+                     <div id="origBadgeList">
                         <span class="badge">党委书记</span>
                         <span class="badge">党员</span>
                      </div>
 
                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="请输入要添加的组织角色" id="orgiInput" />
-                        <span class="input-group-addon" id="orgiAdd">添加</span>
+                        <input type="text" class="form-control" placeholder="请输入要添加的组织角色" id="origInput" />
+                        <span class="input-group-addon" id="origAdd">添加</span>
                      </div>
                   </div>
                 </div>
             </div>
             <div class="layuiBodyWrap tab-pane fade" id="useAuthorizeContent">
-                authasdasd
             </div>
         </div>
     </div>
@@ -572,6 +651,28 @@
     layui.use('form', function(){
       var form = layui.form;
     });
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#bannerCarousel'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            ,indicator: 'outside'
+            ,autoplay: false,
+        });
+        //监听滚动
+        carousel.on('change(bannerCarousel)', function(obj){
+            //bannerCarousel来源于对应HTML容器的 lay-filter="bannerCarousel" 属性值
+            //console.log(obj.index); //当前条目的索引
+            //console.log(obj.prevIndex); //上一个条目的索引
+            //console.log(obj.item); //当前条目的元素对象
+            setTimeout(function(){$("#bannerImg").prop("src",obj.item.children("img").prop("src"))},300);
+        });
+
+        $("#bannerImg").prop("src",$("#bannerCarousel>div[carousel-item]>div.layui-this").children("img").prop("src"));
+    });
+    $("[data-toggle='tooltip']").tooltip();
   </script>
 </body>
 </html>
