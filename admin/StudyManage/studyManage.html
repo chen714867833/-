@@ -245,24 +245,7 @@
                         <button class="layui-btn myButton_big layui-btn-primary " style="margin-bottom:5px;">重置</button>
                     </div>
               </form>
-              <table class="layui-table" lay-data="{url:'studyCircumstances.json', page:true, id:'studyCircumstancesTable', skin: 'line'}">
-                <thead>
-                  <tr>
-                    <th lay-data="{field:'name', width:140}" rowspan="2">姓名</th>
-                    <th lay-data="{field:'partition',width:120}" rowspan="2">支部</th>
-                    <th lay-data="{field:'studyTime', width:120}" rowspan="2">总学时(h)</th>
-                    <th lay-data="{field:'pointSubject', width:200}" colspan="2">指定必修课</th>
-                    <th lay-data="{field:'publicSubject', width:200}" colspan="2">公开课程</th>
-                    <th lay-data="{fixed: 'option', width: 160, align: 'center', toolbar: '#barDemo'}" rowspan="2">操作</th>
-                  </tr>
-                  <tr>
-                    <th lay-data="{field:'pointDoing', width:100}">未完成</th>
-                    <th lay-data="{field:'pointDone', width:100}">已完成</th>
-                    <th lay-data="{field:'publicDoing', width:100}">未完成</th>
-                    <th lay-data="{field:'publicDone', width:100}">已完成</th>
-                  </tr>
-                </thead>
-              </table>
+              <table class="layui-table" id="studySituation"></table>
             </div>
        </div>
   </div>
@@ -270,18 +253,21 @@
   <script src="../../public/layui/layui.js"></script>
   <script src="../../public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="../js/StudyManage/studyManage.js"></script>
-  <script type="text/html" id="toolBar">
+  <script type="text/html" id="toolBar1">
     <a class="layui-btn layui-btn-xs layui-btn-normal studyContentDetail" lay-event="review" data-toggle="tab" href="#studyDetails">详情</a>
     <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="review">撤销</a>
   </script>
+      <script type="text/html" id="toolBar2">
+          <a class="layui-btn layui-btn-xs layui-btn-normal studyContentDetail" lay-event="review" data-toggle="tab" href="#studyDetails">查看明细</a>
+      </script>
 <script src="../../public/js/global.js"></script>
 <script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-primary layui-btn-xs studyCircumstancesLook" lay-event="detail" >查看明细</a>
 </script>
 <script>
   layui.use('table', function () {
-      var table = layui.table;
-      table.render({
+      var table1 = layui.table;
+      table1.render({
           elem: '#test'
           , data: [{ "id": 1000, "title": "我院45名本科毕业班党员顺利完成组织关系介绍信开具工作", "type": "党建要闻", "state": "已发布", "people": "伍宇翔"},{ "id": 1000, "title": "我院45名本科毕业班党员顺利完成组织关系介绍信开具工作", "type": "党建要闻", "state": "已发布", "people": "伍宇翔"}]
           , cols: [[
@@ -290,7 +276,46 @@
           , { field: 'type', width: '15%', title: '类型'}
           , { field: 'state', width: '15%', title: '状态' }
           , { field: 'people', width: '10%', title: '创建人' }
-          , { title: '操作', toolbar: '#toolBar', width: '15%', align: 'center', fixed: 'right' }
+          , { title: '操作', toolbar: '#toolBar1', width: '15%', align: 'center', fixed: 'right' }
+          ]]
+          , skin: 'line'
+          , page: true
+      });
+
+      var table2 = layui.table;
+      table2.render({
+          elem: '#studySituation'
+          , data: [
+              {
+                  "name": 'wang',
+                  "partition": "部门",
+                  "studyTime": "120",
+                  "pointDoing":50,
+                  "pointDone":80,
+                  "publicDoing":0,
+                  "publicDone":80,
+              },{
+                  "name": 'wang',
+                  "partition": "部门",
+                  "studyTime": "120",
+                  "pointDoing":20,
+                  "pointDone":80,
+                  "publicDoing":20,
+                  "publicDone":80,
+              }
+          ]
+          , cols: [[
+              { field: 'name', width: '12%', title: '姓名', rowspan: 2 }
+              , { field: 'partition', width: '12%', title: '支部',rowspan: 2}
+              , { field: 'studyTime', width: '12%', title: '总学时(h)',rowspan: 2}
+              , { field: 'pointSubject', width: '20%', title: '指定必修课',align: 'center', colspan: 2}
+              , { field: 'publicSubject', width: '20%', title: '公开课程',align: 'center', colspan:2 }
+              , { title: '操作', toolbar: '#toolBar2', width: '20%', align:'center', rowspan:2 }
+          ],[
+              { field:'pointDoing', width:'10%',title: '未完成'}
+              , { field:'pointDone', width:'10%',title:'已完成'}
+              ,{ field:'publicDoing', width:'10%',title: '未完成'}
+              , { field:'publicDone', width:'10%',title:'已完成'}
           ]]
           , skin: 'line'
           , page: true

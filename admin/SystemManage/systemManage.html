@@ -92,7 +92,296 @@
         <div class="tab-content">
             <!--权限管理-->
             <div class="layuiBodyWrap tab-pane fade in active" id="authManageContent">
-                auth
+                <button class="layui-btn myButton_big layui-bg-blue" id="authAdd">添加</button>
+                <table class="layui-table">
+                  <colgroup>
+                    <col width="25%">
+                    <col width="25%">
+                    <col width="25%">
+                    <col>
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>人员</th>
+                      <th>范围</th>
+                      <th>权限</th>
+                      <th>操作</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>贤心</td>
+                      <td>
+                        <label class="glyphicon glyphicon-folder-open"></label>
+                        <label>全组织</label>
+                      </td>
+                      <td><label class="label label-auth">全部权限</label></td>
+                      <td>
+                        <span class="layui-breadcrumb" lay-separator="|">
+                          <a class="authEdit" href="#userAuthorityContent" data-toggle="tab">编辑</a>
+                          <a class="authDelete" href="">删除</a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>贤</td>
+                      <td>
+                        <label class="glyphicon glyphicon-folder-open"></label>
+                        <label>全组织</label>
+                      </td>
+                      <td><label class="label label-auth">全部权限</label></td>
+                      <td>
+                        <span class="layui-breadcrumb" lay-separator="|">
+                          <a class="authEdit" href="#userAuthorityContent" data-toggle="tab">编辑</a>
+                          <a class="authDelete" href="">删除</a>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>贤心</td>
+                      <td>
+                        <label class="glyphicon glyphicon-folder-open"></label>
+                        <label>全组织</label>
+                      </td>
+                      <td><label class="label label-auth">全部权限</label></td>
+                      <td>
+                        <span class="layui-breadcrumb" lay-separator="|">
+                          <a class="authLook" href="">查看</a>
+                        </span>
+                      </td>
+                    </tr>
+                    <!--
+                    <tr>
+                      <td>贤心</td>
+                      <td>
+                        <label class="glyphicon glyphicon-folder-open"></label>
+                        <label>全组织</label>
+                      </td>
+                      <td><label class="label label-auth">全部权限</label></td>
+                      <td>
+                        <span class="layui-breadcrumb" lay-separator="|">
+                          <a class="authLook" href="">查看</a>
+                        </span>
+                      </td>
+                    </tr>
+                  -->
+                  </tbody>
+                </table>
+            </div>
+            <!--权限编辑-->
+            <div class="layuiBodyWrap tab-pane fade" id="userAuthorityContent">
+              <div class="layui-btn-gropu"><!--按钮-->
+                  <a class="layui-btn layui-btn-primary" id="userAuthorityBack" href="#authManageContent" data-toggle="tab">
+                    <span class="glyphicon glyphicon-share-alt"></span>返回
+                  </a>
+              </div>
+              <form class="layui-form">
+                <div class="container" id="userAuthorityItems">
+                <div class="row">
+                  <div class="col-md-1">成员：</div>
+                  <div class="col-md-11">
+                    <div id="memberItems">
+                      <span class="badge">学生</span>
+                      <span class="badge">教师</span>
+                      <span class="badge"><label class="glyphicon glyphicon-plus"></label>选择人员</span>
+                    </div>
+                  </div>
+                </div>
+                <!--管理范围-->
+                <div class="row">
+                  <div class="col-md-1">管理范围：</div>
+                  <div class="col-md-11">
+                      <div>
+                        <input type="radio" name="scope" title="全组织" checked>
+                      </div>
+                      <div>
+                        <input type="radio" name="scope" title="所有支部下级">
+                      </div>
+                      <div>
+                        <input type="radio" name="scope" title="特定支部">
+                      </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1">分配权限：</div>
+                  <div class="col-md-11">
+                    <div class="row auth-content">
+                        <div class="col-md-6 auth-label">（将在所选范围内配置权限）</div>
+                        <div class="col-md-6 auth-all">
+                           <input type="checkbox" name="authorityAll" lay-skin="primary" title="全部权限" checked="">
+                        </div>
+                    </div>
+                    <!--
+                      党员管理
+                    -->
+                    <div class="checkbox-lists">
+                      <div class="row checkbox-title">
+                        <div class="col-md-6 checkbox-label">党员管理</div>
+                        <div class="col-md-6 checkbox-all">
+                           <input type="checkbox" name="partyMenberAll" lay-skin="primary" title="全选" checked="true">
+                        </div>
+                      </div>
+                      <div class="row checkbox-items">
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyMenber" lay-skin="primary" title="人员管理" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item"></div>
+                        <div class="col-md-4 checkbox-item"></div>
+                      </div>
+                    </div>
+                     <!--
+                      党费管理
+                    -->
+                    <div class="checkbox-lists">
+                      <div class="row checkbox-title">
+                        <div class="col-md-6 checkbox-label">党费管理</div>
+                        <div class="col-md-6 checkbox-all">
+                          <input type="checkbox" name="partyMenberFeesAll" lay-skin="primary" title="全选" checked="">
+                        </div>
+                      </div>
+                      <div class="row checkbox-items">
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyMenberFees" lay-skin="primary" title="绑定支付宝" checked="">
+                          </li>
+                          <li>
+                            <input type="checkbox" name="partyMenberFees" lay-skin="primary" title="党费缴纳管理" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyMenberFees" lay-skin="primary" title="缴纳比例设置" checked="">
+                          </li>
+                          <li>
+                            <input type="checkbox" name="partyMenberFees" lay-skin="primary" title="报表管理" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyMenberFees" lay-skin="primary" title="党费导入" checked="">
+                          </li>
+                        </div>
+                      </div>
+                    </div>
+                     <!--
+                      党务工作
+                    -->
+                    <div class="checkbox-lists">
+                      <div class="row checkbox-title">
+                        <div class="col-md-6 checkbox-label">党务工作</div>
+                        <div class="col-md-6 checkbox-all">
+                          <input type="checkbox" name="partyWorkAll" lay-skin="primary" title="全选" checked="">
+                        </div>
+                      </div>
+                      <div class="row checkbox-items">
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyWork" lay-skin="primary" title="党建宣传" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyWork" lay-skin="primary" title="两学一做" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyWork" lay-skin="primary" title="三会一课" checked="">
+                          </li>
+                        </div>
+                      </div>
+                    </div>
+                    <!--
+                      学习中心
+                    -->
+                    <div class="checkbox-lists">
+                      <div class="row checkbox-title">
+                        <div class="col-md-6 checkbox-label">学习中心</div>
+                        <div class="col-md-6 checkbox-all">
+                          <input type="checkbox" name="partyStudyAll" lay-skin="primary" title="全选" checked="">
+                        </div>
+                      </div>
+                      <div class="row checkbox-items">
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyStudy" lay-skin="primary" title="学习中心" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyStudy" lay-skin="primary" title="考试中心" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item"></div>
+                      </div>
+                    </div>
+                    <!--
+                      报表管理
+                    -->
+                    <div class="checkbox-lists">
+                      <div class="row checkbox-title">
+                        <div class="col-md-6 checkbox-label">报表管理</div>
+                        <div class="col-md-6 checkbox-all">
+                          <input type="checkbox" name="partyChartAll" lay-skin="primary" title="全选" checked="">
+                        </div>
+                      </div>
+                      <div class="row checkbox-items">
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyChart" lay-skin="primary" title="党员信息" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partyChart" lay-skin="primary" title="组织信息" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item"></div>
+                      </div>
+                    </div>
+                    <!--
+                      系统管理
+                    -->
+                    <div class="checkbox-lists">
+                      <div class="row checkbox-title">
+                        <div class="col-md-6 checkbox-label">系统管理</div>
+                        <div class="col-md-6 checkbox-all">
+                          <input type="checkbox" name="partySystemAll" lay-skin="primary" title="全选" checked="">
+                        </div>
+                      </div>
+                      <div class="row checkbox-items">
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partySystem" lay-skin="primary" title="权限管理" checked="">
+                          </li>
+                          <li>
+                            <input type="checkbox" name="partySystem" lay-skin="primary" title="banner管理" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partySystem" lay-skin="primary" title="身份设置" checked="">
+                          </li>
+                          <li>
+                            <input type="checkbox" name="partySystem" lay-skin="primary" title="组织角色" checked="">
+                          </li>
+                        </div>
+                        <div class="col-md-4 checkbox-item">
+                          <li>
+                            <input type="checkbox" name="partySystem" lay-skin="primary" title="积分设置" checked="">
+                          </li>
+                          <li>
+                            <input type="checkbox" name="partySystem" lay-skin="primary" title="使用授权" checked="">
+                          </li>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--col-md-11-->
+                </div>
+                </div>
+              </form>
             </div>
             <!--身份管理-->
             <div class="layuiBodyWrap tab-pane fade" id="idenManageContent">
@@ -103,7 +392,7 @@
                       </h3>
                   </div>
                   <div class="panel-body">
-                     <div id="badgeList">
+                     <div id="idenBadgeList">
                         <span class="badge">学生</span>
                         <span class="badge">教师</span>
                      </div>
@@ -143,7 +432,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="input-group">
-                            <input type="text" class="form-control" id="firstInput" />
+                            <input type="text" class="form-control" id="firstInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -158,7 +447,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="input-group">
-                            <input type="text" class="form-control" id="secondInput" />
+                            <input type="text" class="form-control" id="secondInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -173,7 +462,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="input-group">
-                            <input type="text" class="form-control" id="thirdInput" />
+                            <input type="text" class="form-control" id="thirdInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -187,8 +476,8 @@
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <div class="input-group">
-                            <input type="text" class="form-control" id="fourInput" />
+                          <div class="input-group"> 
+                            <input type="text" class="form-control" id="fourInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -203,7 +492,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="input-group">
-                            <input type="text" class="form-control" id="fiveInput" />
+                            <input type="text" class="form-control" id="fiveInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -218,7 +507,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="input-group">
-                            <input type="text" class="form-control" id="sixInput" />
+                            <input type="text" class="form-control" id="sixInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -233,7 +522,7 @@
                         </div>
                         <div class="col-md-6">
                           <div class="input-group">
-                            <input type="text" class="form-control" id="sevenInput" />
+                            <input type="text" class="form-control" id="sevenInput" value="0" />
                             <span class="input-group-addon">分</span>
                           </div>
                         </div>
@@ -244,9 +533,88 @@
                   </div>
                 </div>
             </div>
-
             <div class="layuiBodyWrap tab-pane fade" id="bannerManageContent">
-                authsfd
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="banner-header">
+                            <span class="banner-title">banner图编辑</span>
+                        </div>
+                        <div class="banner-body">
+                            <!--轮播图-->
+                            <div>
+                                <div class="layui-carousel" lay-filter="bannerCarousel" id="bannerCarousel">
+                                    <div carousel-item>
+                                        <div>
+                                            <p>
+                                                <span class="imgDot">*</span>
+                                                <span class="imgNum">第 1 张</span>
+                                                <span class="label imgTip">系统默认</span>
+                                            </p>
+                                            <img src="https://desk-fd.zol-img.com.cn/t_s1440x900c5/g3/M00/0B/0F/Cg-4WFRAdTaIdCbhACwGrkpfjeAAAQNMwHa1AcALAbG718.jpg"
+                                                 height="80%" width="50%" alt="banner图" />
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <span class="imgDot">*</span>
+                                                <span class="imgNum">第 2 张</span>
+                                                <span class="label imgTip">系统默认</span>
+                                            </p>
+                                            <img src="https://desk-fd.zol-img.com.cn/t_s1600x900c5/g3/M09/02/0B/Cg-4WFQqEDeITA-fADHY-8KO95cAAPoNAGXZ6UAMdkT409.jpg"
+                                                 height="80%" width="50%" alt="banner图" />
+                                        </div>
+                                        <div>
+                                            <p>
+                                                <span class="imgDot">*</span>
+                                                <span class="imgNum">第 3 张</span>
+                                                <span class="label imgTip">系统默认</span>
+                                            </p>
+                                            <img src="https://desk-fd.zol-img.com.cn/t_s1366x768c5/g5/M00/02/07/ChMkJ1bKyx6IfyroABOCj3O54GgAALImQMJqn0AE4Kn387.jpg"
+                                                 height="80%" width="50%" alt="banner图" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="banner-operation">
+                                    <div class="btnOperation">
+                                        <button class="btn" id="bannerChange">更改照片</button>
+                                        <button class="btn" id="bannerDelete">删除此照片</button>
+                                    </div>
+                                    <div><span class="tip">温馨提示：建议图片尺寸宽750-高320  支持图片类型：jpg、png</span></div>
+                                </div>
+                            </div>
+                            <!--添加链接-->
+                            <div>
+                                <div>添加图片链接<span class="tip">（不添加链接，则没有跳转）</span></div>
+                                <div class="input-group">
+                                    <input class="form-control"
+                                           id="bannerLink"
+                                           placeholder="粘贴或者输入 http://或https://开头的链接地址"
+                                           disabled="true"
+                                           data-toggle="tooltip"
+                                           data-placement="bottom"
+                                           trigger="manual"
+                                           title="请输入图片地址"
+                                    />
+                                    <span class="input-group-addon" id="bannerCancel">取消</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="banner-footer">
+                            <button class="btn" id="bannerSave">保存</button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="banner-header">
+                            <span class="banner-title">手机效果预览</span>
+                        </div>
+                        <div class="banner-body">
+                            <img src="../image/phone.png" />
+                            <img src=""
+                                 id="bannerImg" width="248px" height="105px"  />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="layuiBodyWrap tab-pane fade" id="origManageContent">
                 <div class="panel panel-default">
@@ -256,20 +624,19 @@
                       </h3>
                   </div>
                   <div class="panel-body">
-                     <div id="badgeList">
+                     <div id="origBadgeList">
                         <span class="badge">党委书记</span>
                         <span class="badge">党员</span>
                      </div>
 
                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="请输入要添加的组织角色" id="orgiInput" />
-                        <span class="input-group-addon" id="orgiAdd">添加</span>
+                        <input type="text" class="form-control" placeholder="请输入要添加的组织角色" id="origInput" />
+                        <span class="input-group-addon" id="origAdd">添加</span>
                      </div>
                   </div>
                 </div>
             </div>
             <div class="layuiBodyWrap tab-pane fade" id="useAuthorizeContent">
-                authasdasd
             </div>
         </div>
     </div>
@@ -279,6 +646,33 @@
   <script src="../../public/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <script src="../../public/js/global.js"></script>
   <script type="text/javascript" src="../js/SystemManage/systemManage.js"></script>
+  <script>
+    //Demo
+    layui.use('form', function(){
+      var form = layui.form;
+    });
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#bannerCarousel'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            ,indicator: 'outside'
+            ,autoplay: false,
+        });
+        //监听滚动
+        carousel.on('change(bannerCarousel)', function(obj){
+            //bannerCarousel来源于对应HTML容器的 lay-filter="bannerCarousel" 属性值
+            //console.log(obj.index); //当前条目的索引
+            //console.log(obj.prevIndex); //上一个条目的索引
+            //console.log(obj.item); //当前条目的元素对象
+            setTimeout(function(){$("#bannerImg").prop("src",obj.item.children("img").prop("src"))},300);
+        });
 
+        $("#bannerImg").prop("src",$("#bannerCarousel>div[carousel-item]>div.layui-this").children("img").prop("src"));
+    });
+    $("[data-toggle='tooltip']").tooltip();
+  </script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 #origManageContent div.input-group{
 	width:30%;
 	margin-top: 1em;
-}
+} 
 
 #idenManageContent div.input-group input.form-control,
 #origManageContent div.input-group input.form-control{
@@ -23,9 +23,14 @@
 	background-color: #1E9FFF;
 }
 
+#memberItems .badge:last-child{
+	color: #fff;
+	background-color:#1E9FFF;
+}
+#memberItems .badge,
 #idenManageContent .badge,
 #origManageContent .badge{
-	font-weight: 500px;
+	font-weight: 500;
 	font-size: 12px;
 	padding: 5px 12px;
 	color: #1E9FFF;
@@ -53,9 +58,227 @@
 	background-color: #fff;
 }
 
-#scoreSave{
+#scoreSave,#bannerSave{
 	color: #fff;
 	background-color: #f14b57;
-	padding: 5px 30px ;
+	padding: 8px 30px ;
 	font-size: 14px;
+	letter-spacing: 6px;
+}
+
+#authManageContent .label.label-auth{
+	color: #1E9FFF;
+	background-color:#fff;
+	border:1px solid #1E9FFF;
+}
+
+#authManageContent table>tbody>tr>td>label.glyphicon{
+	color: #1E9FFF;
+}
+
+#authManageContent span.layui-breadcrumb a.authLook,#authManageContent span.layui-breadcrumb a.authEdit{
+	color: #1E9FFF !important ; 
+}
+
+#authManageContent span.layui-breadcrumb a.authDelete{
+	color: #f14b57 !important;
+}
+
+#userAuthorityItems div.row{
+	margin-top: 2em;
+}
+
+#userAuthorityItems div.row>div.col-md-1{
+	text-align: right;
+	padding-left: 0;
+}
+span.glyphicon.glyphicon-share-alt{
+	transform: rotateY(180deg) ;
+	-webkit-transform: rotateY(180deg) ;
+}
+#userAuthorityItems div.row>div.col-md-11{
+	padding-left: 0;
+}
+/*
+*多选框样式
+*/
+.layui-form-checked[lay-skin=primary] i{
+	border-color: #f14b57 !important;
+	background-color: #f14b57 !important;
+	font-weight: bolder;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i{
+	border-color: #f14b57 !important;
+}
+/*
+*单旋钮样式
+*/
+#userAuthorityItems .layui-form-radio>i:hover, .layui-form-radioed>i{
+	color: #f14b57 !important;
+}
+
+#memberItems{
+	background-color: #f5f5f5;
+	padding: 1em;
+}
+/*
+*权限选项样式
+*/
+div.row.auth-content{
+	margin-top: 0 !important;
+}
+
+div.row.auth-content .auth-label{
+	color:#999;
+	font-size: 15px;
+}
+
+div.row.auth-content .auth-all{
+	text-align: right;
+}
+
+.layui-form-checkbox[lay-skin=primary] span{
+	font-size: 15px;
+}
+.checkbox-lists div.col-md-6.checkbox-label{
+	font-size: 15px;
+}
+.checkbox-lists .checkbox-all{
+	text-align: right;
+}
+
+.checkbox-lists div.row.checkbox-items div.col-md-4.checkbox-item{
+	border: 1px solid #f5f5f5 !important;
+	padding: 1em 4em !important;
+}
+
+.checkbox-lists div.row.checkbox-items div.col-md-4.checkbox-item li+li{
+	margin-top: 0.5em ;
+}
+
+.checkbox-lists div.row.checkbox-items{
+	display: -webkit-box;
+	margin-top: 0.5em !important;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.col-md-4 .banner-header{
+	margin-bottom: 1.5em;
+}
+
+.col-md-8 .banner-header{
+	margin-bottom: 3.5em;
+}
+.banner-title{
+	border-left: 4px solid #f14b57;
+	padding-left: 4px;
+	font-size: 1.2em;
+}
+
+.banner-body>div+div{
+	margin-top: 3em;
+}
+
+.banner-body .tip{
+	color: #999;
+	font-size: 14px;
+}
+
+#bannerLink{
+	text-align: center;
+}
+
+#bannerCancel{
+	color:#ccc;
+}
+
+#bannerCancel.unDisabled{
+	background-color: #fff;
+	color: #f14b57;
+	cursor: pointer;
+}
+
+#bannerChange{
+	color: #fff;
+	background-color: #1E9FFF;
+	padding: 8px 30px ;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+#bannerDelete{
+	color: #fff;
+	background-color: #f14b57;
+	padding: 8px 30px ;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+.banner-body .input-group{
+	margin-top: 0.8em;
+	margin-bottom: 2em;
+}
+.banner-operation .btnOperation>.btn{
+	border-radius: 5px;
+}
+
+.banner-operation .btnOperation>.btn+.btn{
+	margin-left: 0.8em !important;
+}
+
+.banner-operation>div+div{
+	margin-top: 0.8em;
+}
+
+.banner-operation{
+	margin-top: 5em;
+	text-align: center;
+}
+
+
+.imgDot{
+	color: #f14b57;
+	margin-right: 0.2em;
+}
+
+.imgTip{
+	color: #fff;
+	background-color: #1E9FFF;
+	margin-left: 0.2em;
+}
+
+.layui-carousel-arrow{
+	background-color: #1E9FFF !important;
+}
+
+.layui-carousel{
+	background-color: transparent !important;
+}
+
+.layui-carousel>[carousel-item]:before{
+	content: '' !important;
+}
+.layui-carousel>[carousel-item]>div{
+	background-color: transparent !important;
+	text-align: center;
+}
+
+.layui-carousel-ind ul{
+	background-color: rgba(0,0,0,0) !important;
+}
+
+.layui-carousel-ind ul li{
+	border: 1px solid #aaa !important;
+}
+
+.layui-carousel-ind ul li.layui-this{
+	background-color: #aaa !important;
+}
+
+img#bannerImg{
+	position: relative;
+	top: -470px;
+	width: 248px;
+	left: 22px;
+	height: 106px;
+	z-index: 100;
 }
